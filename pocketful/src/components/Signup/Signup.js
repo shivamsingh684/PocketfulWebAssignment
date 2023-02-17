@@ -15,8 +15,8 @@ function Signup() {
     const [submitButtonDisable,setSubmitButtonDisable]=useState(false)
     const handel=()=>{
         if(!values.name || !values.email ||!values.pass){
-            setErrorMsg('Fill all fields');
-            return
+            setErrorMsg('*Fill all fields*');
+            return;
         }
         setErrorMsg('')
         setSubmitButtonDisable(true)
@@ -34,6 +34,9 @@ function Signup() {
                 setErrorMsg(err.message)
             })
     }
+    const showAlert = () => {
+        alert("Failing some issue on Google and Github signup buttons");
+      }
 
     return (
       <>
@@ -68,10 +71,10 @@ function Signup() {
                  <b>{errorMsg}</b>
                  <button className="signIn" onClick={handel} disabled={submitButtonDisable}>Create Account</button>
                  <div className="google">
-                     <button className="other"><img className="smallImg" src="https://play-lh.googleusercontent.com/6UgEjh8Xuts4nwdWzTnWH8QtLuHqRMUB7dp24JYVE2xcYzq4HA8hFfcAbU-R-PC_9uA1"/>
+                     <button className="other" onClick={showAlert}><img className="smallImg" src="https://play-lh.googleusercontent.com/6UgEjh8Xuts4nwdWzTnWH8QtLuHqRMUB7dp24JYVE2xcYzq4HA8hFfcAbU-R-PC_9uA1"/>
                      <span>Sign up in with Google</span>
                     </button>
-                    <button className="other"><img className="smallImg" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"/>
+                    <button className="other" onClick={showAlert}><img className="smallImg" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"/>
                      <span>Sign up in with Github</span>
                     </button>
                      

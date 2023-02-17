@@ -7,6 +7,7 @@ import { auth } from '../../firebase'
 
 
 
+
 function Login() {
     const navigate = useNavigate();
     const [values, setValues] = useState({
@@ -18,7 +19,7 @@ function Login() {
 
     const handleSubmission = () => {
         if (!values.email || !values.pass) {
-            setErrorMsg("Fill all fields");
+            setErrorMsg("*Fill all fields*");     
             return;
         }
         setErrorMsg("");
@@ -35,6 +36,10 @@ function Login() {
                 setErrorMsg(err.message);
             });
     };
+    
+    const showAlert = () => {
+          alert("Failing some issue on Google and Github login buttons");
+        }
     return (
         <>
             <div className="container">
@@ -67,10 +72,10 @@ function Login() {
                         <b >{errorMsg}</b>
                         <button className="signIn" disabled={submitButtonDisabled} onClick={handleSubmission}>Sign in</button>
                         <div className="google">
-                            <button className="other"><img className="smallImg" src="https://play-lh.googleusercontent.com/6UgEjh8Xuts4nwdWzTnWH8QtLuHqRMUB7dp24JYVE2xcYzq4HA8hFfcAbU-R-PC_9uA1" />
+                            <button className="other" onClick={showAlert}><img className="smallImg" src="https://play-lh.googleusercontent.com/6UgEjh8Xuts4nwdWzTnWH8QtLuHqRMUB7dp24JYVE2xcYzq4HA8hFfcAbU-R-PC_9uA1" />
                                 <span>Sign in with Google</span>
                             </button>
-                            <button className="other"><img className="smallImg" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" />
+                            <button className="other" onClick={showAlert}><img className="smallImg" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" />
                                 <span>Sign in with Github</span>
                             </button>
 

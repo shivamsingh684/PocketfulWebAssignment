@@ -1,0 +1,84 @@
+#homepage{
+    background-color: white;
+   
+}
+.homeBlog{
+    margin-top:500px;
+}
+
+.main-nav{
+    width: 85%;
+    margin: auto;
+    border: 1px solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+.left ul{
+    display: flex;
+   gap: 10px;
+   align-items: center;
+   
+}
+.left ul li{
+    list-style: none;
+   
+}
+.social-media{
+    display: flex;
+
+}
+.social-media ul{
+    display: flex;
+    gap: 10px;
+}
+.social-media ul li{
+    list-style: none;
+}
+.link2{
+    text-decoration: none;
+    color: rgb(171,178,183);
+}
+.logo{
+    background-color: rgb(254,62,108);
+    padding: 13px;
+    border-radius: 50%;
+    color: white;
+}
+.hamburger-menu{
+    visibility: hidden;
+    /* margin-left: 10px; */
+}
+
+@media (max-width:768px){
+    .hamburger-menu{
+        visibility: visible;
+    }
+    .social-media{
+        visibility: hidden;
+    }
+}
+@media (max-width:375px){
+  .main-nav{
+    width: 25.8rem;
+   
+  }
+  .link2{
+    visibility: hidden;
+  }
+  .social-media{
+    visibility: hidden;
+  }
+  .hamburger-menu{
+    visibility: visible;
+    
+}
+}
+
+/* blog */
+
+.first{
+    width: 100%;
+    border: 1 px solid black;
+}
