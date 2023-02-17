@@ -1,13 +1,139 @@
-body {
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background-color: rgb(113, 84, 191);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+
+}
+
+.container {
+  /* border: 1px solid black; */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: rgb(255,255,255); */
+}
+
+.innerbox {
+  background-color: white;
+  border-radius: 20px;
+  /* border: 1px solid black; */
+  /* width: 100%; */
+  width: 25rem;
+  height: 39rem;
+  margin-top: 50%;
+}
+.innerbox2 {
+  background-color: white;
+  border-radius: 20px;
+  /* border: 1px solid black; */
+  /* width: 100%; */
+  width: 25rem;
+  height: 43rem;
+  margin-top: 50%;
+}
+
+
+.rocket {
+  width: 100%;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+
+.content {
+  padding: 20px;
+}
+
+h1 {
+  color: rgb(113, 84, 191);
+  font-family: 'Arial Narrow';
+  font-size: 26px;
+}
+
+p {
+  font-family: 'Arial Narrow';
+  color: rgb(177, 178, 181);
+  font-weight: bold;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin-top: -40px;
+}
+
+.inputContainer input {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  width: 91%;
+  padding: 14px;
+  border-radius: 5px;
+  font-family: 'Arial Narrow';
+  font-size: 15px;
+  font-weight: bold;
+  border: 1px solid rgba(128, 128, 128, 0.125);
+  outline: none;
+}
+
+::placeholder {
+  color: rgb(141, 143, 149);
+}
+
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.signIn {
+  width: 100%;
+  background-color: rgb(113, 84, 191);
+  padding: 15px;
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  border-radius: 5px;
+  /* margin-left: 10px;
+  margin-right: 10px; */
+  margin-top: 10px;
+}
+
+.smallImg {
+  height: 35px;
+}
+
+.other {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  margin-top: 10px;
+  padding: 4px;
+  border-radius: 5px;
+  font-family: 'Arial Narrow';
+  color: rgb(141, 143, 149);
+  font-size: 15px;
+  font-weight: bold;
+  border: 1px solid rgba(128, 128, 128, 0.125);
+
+}
+
+.link {
+  font-family: 'Arial Narrow';
+  font-weight: bold;
+  text-decoration: none;
+  color: rgb(113, 84, 191);
 }
