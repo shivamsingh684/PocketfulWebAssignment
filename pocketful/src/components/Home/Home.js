@@ -1,19 +1,17 @@
-import React from "react";
+
 import Navbar from "../Navbar/Navbar";
-import HomeBlog from "./HomeBlog";
 import '../Home/Home.css'
+import HomeBlog from "./HomeBlog";
 
-function Home(){
-    return (
-     <>
-     <div id="homepage" > 
-      
-      <Navbar/>
-     
-      {/* <div className="homeBlog"> <HomeBlog/></div> */}
 
-      </div>
-     </>   
+
+function Home() {
+
+return (
+    <div className="homePage">
+            <Navbar />
+            <HomeBlog/>
+        </div>
     )
 }
 

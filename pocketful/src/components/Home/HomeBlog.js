@@ -1,6 +1,5 @@
-import React from "react";
-import  { useEffect, useState } from "react";
-// import axios from 'axios'
+import React, { useEffect, useState } from "react";
+import axios from 'axios'
 import '../Home/Home.css'
 
 
@@ -10,74 +9,48 @@ function HomeBlog() {
     // const [loading, setLoading] = useState(true);
 
     const getUsers = async () => {
-        try {
-            const response = await fetch('https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=69faa0af1b5f4bd0bdbc4c45322ca18c');
-            //  setLoading(false);
-            let data = await response.json();
-            console.log(data.articles)
-          
-            setUsers(data);
-        } catch (error) {
-            // setLoading(false);
-            console.log("my error is " + error);
-        }
-    }
+        const response = await axios.get(
+            'https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=69faa0af1b5f4bd0bdbc4c45322ca18c'
+        );
+
+        setUsers(response.data.articles);
+    };
 
     useEffect(() => {
         getUsers();
     }, []);
+
+    const convertDate = str => {
+        const isoDate = str;
+        const date = new Date(isoDate);
+        const day = date.getDay();
+        const month = date.getMonth() + 1;
+        const year = date.getFullYear().toString().substr(-2);
+        const formattedDate = `${day}/${month}/${year}`;
+        return formattedDate;
+    };
+
+    console.log(users);
     return (
-        <>
-            {
-                users.map((curElem) => {
-
-                    const { avatar_url, id, login, type } = curElem;
-                    return (
-                        <div className="first" >
-                            <div className="second"></div>
-                            <div className="second">
-                                <div className="third">
-                                    <div className="third2"></div>
-                                    <div className="third2"></div>
-                                </div>
-                                <div className="third">
-                                <div className="third2"></div>
-                                <div className="third2"></div>
-                                </div>
-                                <div className="third">
-                                <div className="third2"></div>
-                                <div className="third2"></div> 
-                                </div>
-                            </div>
-                        </div>
-                    )
-                })
-            }
-
-        </>
-    )
-
-
-    // try {
-
-    //   let url = `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=69faa0af1b5f4bd0bdbc4c45322ca18c`;
-    //   let res = await fetch(url);
-    //   let data = await res.json();
-    //   for(let i=0;i<data.articles.length;i++){
-    //     console.log(data.articles[i].author)
-
-    //   }
-
-
-    // //   append(data.items)
-    // } catch (err) {
-    //   console.log(err);
-    // }
-
-
-
-
-
+        <div className="flex">
+            {users.map((user,i) => (
+                <div
+                    className={`news-box1`}
+                    key={i}>
+                   
+                    <div><img className="news-img" src={user.urlToImage} alt="news-img" /></div>
+                    <div>
+                        <span>{convertDate(user.publishedAt)}</span>
+                        <h3>{user.title}</h3>
+                        <p>{user.description}</p>
+                    </div>
+                </div>
+            
+                
+            ))}
+        </div>
+    );
 }
+
 
 export default HomeBlog

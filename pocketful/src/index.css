@@ -3,6 +3,10 @@
   margin: 0;
 
 }
+/* .App{
+  width: 90%;
+  margin: auto;
+} */
 
 body {
   /* text-align: center; */
@@ -29,6 +33,7 @@ body {
   
 }
 
+
 .innerbox {
   
   background-color: white;
@@ -52,7 +57,7 @@ body {
   /* width: 100%; */
   width: 25rem;
   height: 43rem;
-  margin-top: 22%;
+  /* margin-top: 22%; */
 }
 .innerbox2:hover{
   box-shadow: 5px 8px 8px 8px rgba(0, 0, 0, 0.595);
